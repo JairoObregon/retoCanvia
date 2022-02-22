@@ -1,0 +1,27 @@
+<div class="container">
+    <div *ngIf = "Mylist.length == 0">
+        <div class="alert alert-danger" role="alert">
+            <p>Lista Vacia, agregue personajes a su lista!!!!!!</p>
+          </div>
+    </div>
+    <ng-container *ngIf="Mylist"> 
+        <ng-container *ngFor="let personaje of Mylist">
+            <h1 class="text-center mb-2">Mi lista de personajes</h1>
+            <div class="card mb-3" style="max-width: 100vh;">
+                <div class="row g-0">
+                <div class="col-md-4">
+                    <img [src]="personaje.thumbnail.path + '.' + personaje.thumbnail.extension" class="img-fluid rounded-start" alt="...">
+                </div>
+                <div class="col-md-8">
+                    <div class="card-body">
+                    <h5 class="card-title">{{personaje.name}}</h5>
+                    <p class="card-text">{{personaje.description}}</p>
+                    <p class="card-text"><small class="text-muted">{{personaje.modified}}</small></p>
+                    <button type="button" class="btn btn-danger" (click)="delete(personaje.id)">Quitar</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </ng-container>
+    </ng-container>
+</div>

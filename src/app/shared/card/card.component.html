@@ -1,0 +1,8 @@
+<div class="card " style="width: 18rem;">
+    <img [src]="srcImg" class="card-img-top" width="300" height="300">
+    <div class="card-body">
+      <h5 class="card-title">{{personaje.name}}</h5>
+      <button class="btn btn-primary" [ngClass]="{'disabled': disable}" (click)="add(personaje)" [disabled]="disable">Agregar mi lista</button>
+      <a class="btn btn-success mx-2 " (click)="goTo(personaje.id)">Ver</a>
+    </div>
+</div>

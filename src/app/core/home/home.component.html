@@ -1,0 +1,17 @@
+<div class="container mb-5" style="text-align: center;">
+    <div *ngIf="!list" class="spinner-border" role="status">
+        <span class="visually-hidden ">Loading...</span>
+    </div>
+</div>
+
+<div class="container" *ngIf="list">
+    <h1 class="my-4 text-center">Lista de personajes</h1>
+    <div  class="row row-cols-1 row-cols-md-3 g-4">      
+        <ng-container *ngFor = "let data of list ">
+                <app-card [personaje]="data" (newItemEvent)="addItem($event)"></app-card>
+        </ng-container>
+    </div>
+    <app-pagination></app-pagination>
+</div>
+
+

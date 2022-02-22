@@ -1,0 +1,13 @@
+<div class="container" *ngIf="personaje">
+    <div class="card mb-3">
+        <h1 class="text-center">Detalle de personaje</h1>
+        <div class="card-body">  
+          <h5 class="card-title">{{personaje.name}}</h5>
+          <p class="card-text">{{personaje.description}}</p>
+          <p class="card-text"><small class="text-muted">{{personaje.modified}}</small></p>
+          <img [src]="srcImg" class="card-img-top" alt="...">
+          
+        </div>
+      </div>
+</div>
+
