@@ -14,7 +14,6 @@ export class MylistComponent implements OnInit {
   ngOnInit(): void {
     this.listService.currentData$.subscribe(
       res => {
-        console.log(res)
         this.Mylist = res
         
       }
@@ -22,8 +21,6 @@ export class MylistComponent implements OnInit {
   }
 
   delete(id:any){
-    console.log(this.Mylist)
-    console.log(id)
     this.listService.remove(id)
   }
 

@@ -30,7 +30,6 @@ export class HomeComponent implements OnInit {
 
   getData(){
     let data = this.rutaActiva.snapshot.params['num']
-    console.log(data)
     this.apiService.get(data).subscribe(
       res =>{
         this.list = res.data.results
